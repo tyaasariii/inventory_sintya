@@ -1,0 +1,29 @@
+*Membuat data base
+-CREATE DATABASE db_inventory_sintya_xi4
+
+*membuat table
+-CREATE TABLE barang 
+( id_barang int PRIMARY KEY,
+ nama_barang varchar (50),
+ id_jenis int,
+ harga int,
+ stok int );
+
+-CREATE TABLE jenis
+( id_jenis int PRIMARY KEY,
+ nama_jenis varchar (60));
+
+*membuat isi table
+-INSERT INTO barang VALUES
+("001","mie instan","111","3000","30"),
+("002","teh pucuk","222","4000","45"),
+("003","susu","333","7000","50");
+
+*INSERT INTO jenis VALUES
+("111","makanan"),
+("222","minuman"),
+("333","minuman");
+
+ALTER TABLE barang ADD FOREIGN key (id_jenis) REFERENCES jenis (id_jenis)
+ON DELETE CASCADE
+ON UPDATE CASCADE
